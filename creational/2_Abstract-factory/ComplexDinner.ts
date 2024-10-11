@@ -1,34 +1,52 @@
-import { DishType, FoodNationality, IComplexDinner, IDish } from './types';
+import { FoodNationality, IComplexDinner, IDish } from './types';
 import { ApplePie, Borshch, ClamChowder, GoldDragon, GreenDragon, Holubtsi, RedDragon, RoastedTurkey, Syrnyky } from './Dish';
 
 // National Complex Dinners - these are FACTORIES
 class JapaneseComplexDinner implements IComplexDinner {
   public readonly nationality = FoodNationality.JAPANESE;
 
-  getDish(dishType: DishType): IDish {
-    if (dishType === DishType.FIRST) return new GoldDragon();
-    if (dishType === DishType.SECOND) return new GreenDragon();
-    if (dishType === DishType.THIRD) return new RedDragon();
+  getFirstDish(): IDish {
+    return new GoldDragon();
+  }
+
+  getSecondDish(): IDish {
+    return new GreenDragon();
+  }
+
+  getThirdDish(): IDish {
+    return new RedDragon();
   }
 }
 
 class AmericanComplexDinner implements IComplexDinner {
   public readonly nationality = FoodNationality.AMERICAN;
 
-  getDish(dishType: DishType): IDish {
-    if (dishType === DishType.FIRST) return new ClamChowder();
-    if (dishType === DishType.SECOND) return new RoastedTurkey();
-    if (dishType === DishType.THIRD) return new ApplePie();
+  getFirstDish(): IDish {
+    return new ClamChowder();
+  }
+
+  getSecondDish(): IDish {
+    return new RoastedTurkey();
+  }
+
+  getThirdDish(): IDish {
+    return new ApplePie();
   }
 }
 
 class UkrainianComplexDinner implements IComplexDinner {
   public readonly nationality = FoodNationality.UKRAINIAN;
 
-  getDish(dishType: DishType): IDish {
-    if (dishType === DishType.FIRST) return new Borshch();
-    if (dishType === DishType.SECOND) return new Holubtsi();
-    if (dishType === DishType.THIRD) return new Syrnyky();
+  getFirstDish(): IDish {
+    return new Borshch();
+  }
+
+  getSecondDish(): IDish {
+    return new Holubtsi();
+  }
+
+  getThirdDish(): IDish {
+    return new Syrnyky();
   }
 }
 

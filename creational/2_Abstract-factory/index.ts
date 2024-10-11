@@ -1,5 +1,5 @@
 import { Kitchen } from './Kitchen';
-import { DishType, FoodNationality, IComplexDinner, IDish } from './types';
+import { FoodNationality, IComplexDinner, IDish } from './types';
 
 class Cafe {
   public cookComplexDinner(nationality: FoodNationality) {
@@ -21,9 +21,12 @@ const complexDinner3 = cafe.cookComplexDinner(FoodNationality.UKRAINIAN);
   console.info('--------------------------');
   console.info(complexDinner.nationality);
 
-  [DishType.FIRST, DishType.SECOND, DishType.THIRD]
-    .forEach((dishType: DishType, index) => {
-      const dish: IDish = complexDinner.getDish(dishType);
+  const firstDish: IDish = complexDinner.getFirstDish();
+  const secondDish: IDish = complexDinner.getSecondDish();
+  const thirdDish: IDish = complexDinner.getThirdDish();
+
+  [firstDish, secondDish, thirdDish]
+    .forEach((dish, index) => {
       console.info(index + 1, dish.getName());
     });
 

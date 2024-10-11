@@ -4,12 +4,6 @@ export enum FoodNationality {
   UKRAINIAN = 'UKRAINIAN'
 }
 
-export enum DishType {
-  FIRST = 'FIRST',
-  SECOND = 'SECOND',
-  THIRD = 'THIRD'
-}
-
 export interface IKitchen {
   nationality: FoodNationality;
   getComplexDinner(): IComplexDinner;
@@ -17,7 +11,9 @@ export interface IKitchen {
 
 export interface IComplexDinner {
   nationality: FoodNationality;
-  getDish(dishType: DishType): IDish
+  getFirstDish(): IDish
+  getSecondDish(): IDish
+  getThirdDish(): IDish
 }
 
 export interface IDish {
