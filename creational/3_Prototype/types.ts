@@ -7,7 +7,8 @@ export enum AutoTypeEnum {
 export interface IAuto {
   type: AutoTypeEnum;
   color: string;
-  number: string;
-  setColor(color: string): void;
-  setNumber(number: string): void;
+  vin: string;
+  cloneCar(vin: IAuto['vin'], color?: IAuto['color']): IAuto;
+  cloneTruck(vin: IAuto['vin'], color?: IAuto['color']): IAuto;
+  cloneMinivan(vin: IAuto['vin'], color?: IAuto['color']): IAuto;
 }
