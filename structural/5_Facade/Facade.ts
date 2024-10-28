@@ -1,8 +1,8 @@
-import { Operation } from './types';
+import { IFacade, Operation } from './types';
 import { sendRequest } from './utils';
 
 // Facade for dneonline.com
-class Facade {
+class Facade implements IFacade {
   add(a: number, b: number): Promise<number> {
     return sendRequest(a, b, Operation.Add);
   }
