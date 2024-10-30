@@ -7,21 +7,7 @@ import {
   AddSalmonCommand,
   AddShrimpCommand,
 } from './Commands';
-import { Command } from './types';
-
-class PizzaInvoker {
-  private commands: Command[] = [];
-
-  addCommand(command: Command): void {
-    this.commands.push(command);
-  }
-
-  makePizza(): void {
-    for (const command of this.commands) {
-      command.execute();
-    }
-  }
-}
+import { PizzaInvoker } from './Invoker';
 
 // Example usage
 const pizza = new Pizza();
