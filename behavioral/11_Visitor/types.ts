@@ -13,6 +13,6 @@ export interface Visitor {
 
 export interface IPizza {
   accept(visitor: Visitor): void;
-  addIngredient(ingredient: Ingredient): void;
-  getIngredients(): Ingredient[];
+  get ingredients(): Ingredient[];
+  set ingredients(ingredients: Ingredient[]);
 }

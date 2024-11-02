@@ -1,18 +1,18 @@
 import { IPizza, Ingredient, Visitor } from './types';
 
 class Pizza implements IPizza {
-  private readonly ingredients: Ingredient[] = [];
+  private _ingredients: Ingredient[] = [];
 
   accept(visitor: Visitor, options?: object): void {
     visitor.visit(this, options);
   }
 
-  addIngredient(ingredient: Ingredient): void {
-    this.ingredients.push(ingredient);
+  get ingredients(): Ingredient[] {
+    return this._ingredients;
   }
 
-  getIngredients(): Ingredient[] {
-    return this.ingredients;
+  set ingredients(ingredients: Ingredient[]) {
+    this._ingredients = ingredients;
   }
 }
 
